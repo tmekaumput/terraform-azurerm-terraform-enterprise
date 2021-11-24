@@ -242,7 +242,7 @@ module "user_data" {
   # Database
   user_data_pg_dbname   = local.database.name
   user_data_pg_netloc   = local.database.address
-  user_data_pg_user     = "${local.database.server.administrator_login}.${local.database.server.fqdn}"
+  user_data_pg_user     = "${local.database.server.administrator_login}@${local.database.server.name}"
   user_data_pg_password = var.database_flexible_server ? local.database.server.administrator_password : local.database.server.administrator_login_password
 
   # Redis
